@@ -59,8 +59,8 @@ function activate(context) {
 		text
 			? vscode.commands.executeCommand('editor.action.insertLineAfter').then(() => {
 				const str = `${text}`.replace(/\'|\"/g, '');
-				const rootPath = vscode.workspace.rootPath;
-				const logToInsert = `console.log('%cAT-${str}-${rootPath}: ', 'color: #bf2c9f; background: pink; font-size: 13px;', ${text});`;
+				const fileName = vscode.window.activeTextEditor.document.fileName;
+				const logToInsert = `console.log('%cAT-${str}-${fileName}: ', 'color: #bf2c9f; background: pink; font-size: 13px;', ${text});`;
 				insertText(logToInsert);
 			})
 			: insertText('console.log();');
