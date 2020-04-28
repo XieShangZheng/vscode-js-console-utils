@@ -31,3 +31,6 @@ To remove console.logs:
 
 ## License
 [MIT License](LICENSE)
+
+## 打包方法
+1. vsce package
